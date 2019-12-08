@@ -57,7 +57,7 @@
 //   ---1----
 import * as React from "react";
 import { graphql, ChildMutateProps } from "react-apollo";
-import { Register, RegisterVariables } from "./__generated__/Register";
+import { Register, RegisterVariables } from "../../schemaTypes";
 
 import gql from "graphql-tag";
 
@@ -76,7 +76,7 @@ class C extends React.PureComponent<
       variables: values
     });
 
-    console.log("response: ", response);
+    console.log("____RESPONSE___: ", response);
     return null;
   };
 
