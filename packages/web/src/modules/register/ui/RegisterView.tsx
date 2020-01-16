@@ -19,7 +19,7 @@ interface Props {
 class C extends React.PureComponent<FormikProps<FormValues> & Props> {
     render() {
         return (
-            <Form translate="yes" style={{ display: "flex" }} onSubmit={() => alert("submitted")}>
+            <Form translate="yes" style={{ display: "flex" }} >
                 <div style={{ width: 400, margin: "auto" }}>
                     <Field
                         name="email"
