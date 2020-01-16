@@ -1,11 +1,16 @@
 {
   "private": true,
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ],
-    "nohoist": [
-      "**/jest"
-    ]
+  "workspaces": [
+    "packages/*"
+  ],
+  "name": "airbnb",
+  "scripts": {
+    "build:common": "npx lerna run build --scope='@air/common'",
+    "build:controller": "npx lerna run build --scope='@air/controller'",
+    "clean": "npx lerna clean --yes && rimraf node_modules"
+  },
+  "dependencies": {
+    "lerna": "^3.20.2",
+    "rimraf": "^3.0.0"
   }
 }

@@ -30,7 +30,15 @@ interface Props {
   }) => JSX.Element | null;
 }
 
-class C extends React.PureComponent<
+// (*)
+// TS:
+// (alias) type ChildMutateProps<TProps = {}, TData = {}, TGraphQLVariables
+//  = Record<string, any>> = TProps & MutateProps<TData, TGraphQLVariables>
+// <ChildMutateProps < Props, any, any >>
+// <ChildMutateProps < Props, name of mutation, name of variables >>
+
+
+class C extends React.PureComponent<    // (*)
   ChildMutateProps<Props, Register, RegisterVariables>
   > {
   submit = async (values: RegisterVariables) => {
@@ -38,7 +46,8 @@ class C extends React.PureComponent<
     const response = await this.props.mutate({
       variables: values
     });
-
+    // got access to:
+    // response.data?.register
     console.log("____RESPONSE___: ", response);
     return null;
   };
