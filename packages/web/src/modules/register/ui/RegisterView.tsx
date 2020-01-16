@@ -8,70 +8,70 @@ const { Form: AntForm, Icon, Button } = Antd;
 const FormItem = AntForm.Item;
 
 interface FormValues {
-  email: string;
-  password: string;
+    email: string;
+    password: string;
 }
 
 interface Props {
-  submit: (values: FormValues) => Promise<FormikErrors<FormValues> | null>;
+    submit: (values: FormValues) => Promise<FormikErrors<FormValues> | null>;
 }
 
 class C extends React.PureComponent<FormikProps<FormValues> & Props> {
-  render() {
-    return (
-      <Form style={{ display: "flex" }}>
-        <div style={{ width: 400, margin: "auto" }}>
-          <Field
-            name="email"
-            // tslint:disable-next-line:jsx-no-multiline-js
-            prefix={
-              <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} /> as any
-              // tslint:disable-next-line:jsx-curly-spacing
-            }
-            placeholder="Email"
-            component={InputField}
-          />
-          <Field
-            name="password"
-            type="password"
-            // tslint:disable-next-line:jsx-no-multiline-js
-            prefix={
-              <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} /> as any
-              // tslint:disable-next-line:jsx-curly-spacing
-            }
-            placeholder="Password"
-            component={InputField}
-          />
-          <FormItem>
-            <a className="login-form-forgot" href="https://youtube.com">
-              Forgot password
+    render() {
+        return (
+            <Form translate="yes" style={{ display: "flex" }} onSubmit={() => alert("submitted")}>
+                <div style={{ width: 400, margin: "auto" }}>
+                    <Field
+                        name="email"
+                        // tslint:disable-next-line:jsx-no-multiline-js
+                        prefix={
+                            <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} /> as any
+                            // tslint:disable-next-line:jsx-curly-spacing
+                        }
+                        placeholder="Email"
+                        component={InputField}
+                    />
+                    <Field
+                        name="password"
+                        type="password"
+                        // tslint:disable-next-line:jsx-no-multiline-js
+                        prefix={
+                            <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} /> as any
+                            // tslint:disable-next-line:jsx-curly-spacing
+                        }
+                        placeholder="Password"
+                        component={InputField}
+                    />
+                    <FormItem>
+                        <a className="login-form-forgot" href="https://youtube.com">
+                            Forgot password
             </a>
-          </FormItem>
-          <FormItem>
-            <Button
-              type="primary"
-              htmlType="submit"
-              className="login-form-button"
-            >
-              Register
+                    </FormItem>
+                    <FormItem>
+                        <Button
+                            type="primary"
+                            htmlType="submit"
+                            className="login-form-button"
+                        >
+                            Register
             </Button>
-          </FormItem>
-          <FormItem>
-            Or <a href="https://youtube.com">login now!</a>
-          </FormItem>
-        </div>
-      </Form>
-    );
-  }
+                    </FormItem>
+                    <FormItem>
+                        Or <a href="https://youtube.com">login now!</a>
+                    </FormItem>
+                </div>
+            </Form>
+        );
+    }
 }
 
 export const RegisterView = withFormik<Props, FormValues>({
-  validationSchema: validUserSchema,
-  mapPropsToValues: () => ({ email: "", password: "" }),
-  handleSubmit: async (values, { props, setErrors }) => {
-    const errors = await props.submit(values);
-    if (errors) {
-      setErrors(errors);
+    validationSchema: validUserSchema,
+    mapPropsToValues: () => ({ email: "", password: "" }),
+    handleSubmit: async (values, { props, setErrors }) => {
+        const errors = await props.submit(values);
+        if (errors) {
+            setErrors(errors);
+        }
     }
-  }
 })(C);

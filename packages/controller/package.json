@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "rimraf ./dist && tsc",
-    "gen": "apollo codegen:generate --excludes=node_modules/* --includes=./src/**/*.tsx --endpoint=http://localhost:4002 --target typescript --tagName gql --outputFlat ./src/schemaTypes.ts"
+    "gen": "apollo codegen:generate --excludes=node_modules/* --includes=./src/**/*.tsx --endpoint=http://localhost:4013 --target typescript --tagName gql --outputFlat ./src/schemaTypes.ts"
   },
   "dependencies": {
     "apollo": "^2.21.1",

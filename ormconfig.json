@@ -5,13 +5,19 @@
     "host": "localhost",
     "port": 5432,
     "username": "postgres",
-    "password": "",
-    "database": "AIR",
+    "password": "begginYou6342",
+    "database": "bnb",
     "synchronize": true,
     "logging": true,
-    "entities": ["src/entity/**/*.ts"],
-    "migrations": ["src/migration/**/*.ts"],
-    "subscribers": ["src/subscriber/**/*.ts"],
+    "entities": [
+      "src/entity/**/*.ts"
+    ],
+    "migrations": [
+      "src/migration/**/*.ts"
+    ],
+    "subscribers": [
+      "src/subscriber/**/*.ts"
+    ],
     "cli": {
       "entitiesDir": "src/entity",
       "migrationsDir": "src/migration",
@@ -24,14 +30,20 @@
     "host": "localhost",
     "port": 5432,
     "username": "postgres",
-    "password": "",
-    "database": "AIR",
+    "password": "begginYou6342",
+    "database": "bnb",
     "synchronize": true,
     "logging": true,
     "dropSchema": true,
-    "entities": ["src/entity/**/*.ts"],
-    "migrations": ["src/migration/**/*.ts"],
-    "subscribers": ["src/subscriber/**/*.ts"],
+    "entities": [
+      "src/entity/**/*.ts"
+    ],
+    "migrations": [
+      "src/migration/**/*.ts"
+    ],
+    "subscribers": [
+      "src/subscriber/**/*.ts"
+    ],
     "cli": {
       "entitiesDir": "src/entity",
       "migrationsDir": "src/migration",

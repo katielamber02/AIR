@@ -1,6 +1,4 @@
 import * as React from "react";
-import { RegisterController } from "@air/controller";
-
 import { RegisterView } from "./ui/RegisterView";
 
 // container -> view
@@ -8,11 +6,12 @@ import { RegisterView } from "./ui/RegisterView";
 // controller -> connector -> view
 
 export class RegisterConnector extends React.PureComponent {
-  render() {
-    return (
-      <RegisterController>
-        {({ submit }) => <RegisterView submit={submit} />}
-      </RegisterController>
-    );
-  }
+    dummySubmit = async (values: any) => {
+        console.log(values);
+        return null;
+    };
+
+    render() {
+        return <RegisterView submit={this.dummySubmit} />;
+    }
 }

@@ -1,13 +1,15 @@
 {
-  "name": "@air/web",
+  "name": "ts_react_ben",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "antd": "^3.26.0",
+    "@air/common": "1.0.0",
+    "@air/controller": "1.0.0",
+    "antd": "^3.26.7",
     "apollo-cache-inmemory": "^1.6.3",
     "apollo-client": "^2.6.4",
     "apollo-link-http": "^1.5.16",
-    "formik": "^2.0.6",
+    "formik": "^2.0.7",
     "graphql": "^14.5.8",
     "graphql-tag": "^2.10.1",
     "react": "^16.9.0",
@@ -15,10 +17,7 @@
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.1.2",
-    "typescript": "3.6.3",
-    "yup": "^0.27.0",
-    "@air/common": "1.0.0",
-    "@air/controller": "1.0.0"
+    "typescript": "3.6.3"
   },
   "scripts": {
     "start": "react-scripts start",
