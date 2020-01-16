@@ -16,8 +16,12 @@ import { createTestConn } from "./testUtils/createTestConn";
 const SESSION_SECRET = "ajslkjalksjdfkl";
 const RedisStore = connectRedis(session as any);
 
+// CHANGE ENV VAR to test
+
+
+console.log("ENV", process.env.NODE_ENV)
 export const startServer = async () => {
-  if (process.env.NODE_ENV === "test") {
+  if (process.env.NODE_ENV === "deveopment") {
     await redis.flushall();
   }
 
@@ -63,21 +67,21 @@ export const startServer = async () => {
   const cors = {
     credentials: true,
     origin:
-      process.env.NODE_ENV === "test"
+      process.env.NODE_ENV === "deveopment"
         ? "*"
         : (process.env.FRONTEND_HOST as string)
   };
 
   server.express.get("/confirm/:id", confirmEmail);
 
-  if (process.env.NODE_ENV === "test") {
+  if (process.env.NODE_ENV === "deveopment") {
     await createTestConn(true);
   } else {
     await createTypeormConn();
   }
   const app = await server.start({
     cors,
-    port: process.env.NODE_ENV === "test" ? 0 : 4013
+    port: process.env.NODE_ENV === "deveopment" ? 0 : 4013
   });
   console.log("Server is running on localhost:4013");
 
