@@ -7,10 +7,7 @@ import { RegisterController } from '@air/controller'
 // controller -> connector -> view
 
 export class RegisterConnector extends React.PureComponent {
-    dummySubmit = async (values: any) => {
-        console.log('VALUES:', values);
-        return null;
-    };
+
 
     render() {
         return (
@@ -19,7 +16,7 @@ export class RegisterConnector extends React.PureComponent {
             //     <RegisterView submit={this.dummySubmit} />;
             // </>
             <RegisterController >
-                {({ submit }) => <RegisterView submit={submit} />}
+                {({ submit }: { submit: any }) => <RegisterView submit={submit} />}
             </RegisterController>
         )
 

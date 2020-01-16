@@ -4,14 +4,17 @@ import { ResolverMap } from "../../../types/graphql-utils";
 import { User } from "../../../entity/User";
 import { formatYupError } from "../../../utils/formatYupError";
 import { duplicateEmail } from "./errorMessages";
-// import { createConfirmEmailLink } from "../../utils/createConfirmEmailLink";
-// import { sendEmail } from "../../utils/sendEmail";
+
+// uncomment once get an API key
+
+// import { sendEmail } from "../../../utils/sendEmail";
+// import { createConfirmEmailLink } from "./createConfirmEmailLink";
 
 export const resolvers: ResolverMap = {
   Mutation: {
     register: async (
       _,
-      args: GQL.IRegisterOnMutationArguments
+      args: GQL.IRegisterOnMutationArguments,
       // { redis, url }
     ) => {
       try {
